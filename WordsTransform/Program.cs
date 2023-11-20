@@ -37,16 +37,14 @@ namespace WordsTransform
                 {
                     //записываем слово во временную переменную
                     string tmp = listWords[i];
-                    if (tmp.Length > 2)
+                    if (tmp.Length >= 2)
                     {
                         //получаем первую букву
                         string letter1 = tmp.Substring(0, 1);
-                        //получаем последуюю букву
-                        string letterlast = tmp.Substring(tmp.Length - 1, 1);
-                        //обрезаем первую и последунюю буквы
-                        tmp = tmp.Substring(1, tmp.Length - 2);
+                        //обрезаем перую букву
+                        tmp = tmp.Substring(1, tmp.Length - 1);
                         //формируем слово под текущие требования
-                        tmp = $"{letterlast}{tmp}{letter1}";
+                        tmp = $"{tmp}{letter1}";
                     }
                     //формируем результат
                     Console.Write(tmp + " ");
